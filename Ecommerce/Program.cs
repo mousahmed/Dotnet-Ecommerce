@@ -1,4 +1,4 @@
-using Ecommerce.Data;
+using Ecommerce.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using dotenv.net;
 
