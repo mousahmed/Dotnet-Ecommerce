@@ -3,8 +3,9 @@ using Ecommerce.DataAccess.Respository.IRepository;
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EcommerceWeb.Controllers
+namespace EcommerceWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
