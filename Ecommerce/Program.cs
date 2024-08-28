@@ -1,6 +1,8 @@
 using Ecommerce.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using dotenv.net;
+using Ecommerce.DataAccess.Respository.IRepository;
+using Ecommerce.DataAccess.Respository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,7 @@ var connectionString = string.Format(
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
