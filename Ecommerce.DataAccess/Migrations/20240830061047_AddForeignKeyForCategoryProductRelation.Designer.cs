@@ -3,6 +3,7 @@ using Ecommerce.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240830061047_AddForeignKeyForCategoryProductRelation")]
+    partial class AddForeignKeyForCategoryProductRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -143,10 +146,6 @@ namespace Ecommerce.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("imageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
@@ -165,8 +164,7 @@ namespace Ecommerce.DataAccess.Migrations
                             Price = 14.99,
                             Price100 = 12.99,
                             Price50 = 13.99,
-                            Title = "The Lord of the Rings",
-                            imageUrl = ""
+                            Title = "The Lord of the Rings"
                         },
                         new
                         {
@@ -179,8 +177,7 @@ namespace Ecommerce.DataAccess.Migrations
                             Price = 9.9900000000000002,
                             Price100 = 7.9900000000000002,
                             Price50 = 8.9900000000000002,
-                            Title = "Harry Potter and the Philosopher's Stone",
-                            imageUrl = ""
+                            Title = "Harry Potter and the Philosopher's Stone"
                         },
                         new
                         {
@@ -193,8 +190,7 @@ namespace Ecommerce.DataAccess.Migrations
                             Price = 7.9900000000000002,
                             Price100 = 5.9900000000000002,
                             Price50 = 6.9900000000000002,
-                            Title = "The Da Vinci Code",
-                            imageUrl = ""
+                            Title = "The Da Vinci Code"
                         },
                         new
                         {
@@ -207,8 +203,7 @@ namespace Ecommerce.DataAccess.Migrations
                             Price = 4.9900000000000002,
                             Price100 = 2.9900000000000002,
                             Price50 = 3.9900000000000002,
-                            Title = "The Shining",
-                            imageUrl = ""
+                            Title = "The Shining"
                         },
                         new
                         {
@@ -221,8 +216,7 @@ namespace Ecommerce.DataAccess.Migrations
                             Price = 2.9900000000000002,
                             Price100 = 0.98999999999999999,
                             Price50 = 1.99,
-                            Title = "The Notebook",
-                            imageUrl = ""
+                            Title = "The Notebook"
                         },
                         new
                         {
@@ -235,8 +229,7 @@ namespace Ecommerce.DataAccess.Migrations
                             Price = 6.9900000000000002,
                             Price100 = 4.9900000000000002,
                             Price50 = 5.9900000000000002,
-                            Title = "The Hunger Games",
-                            imageUrl = ""
+                            Title = "The Hunger Games"
                         },
                         new
                         {
@@ -249,8 +242,7 @@ namespace Ecommerce.DataAccess.Migrations
                             Price = 10.99,
                             Price100 = 8.9900000000000002,
                             Price50 = 9.9900000000000002,
-                            Title = "Game of Thrones",
-                            imageUrl = ""
+                            Title = "Game of Thrones"
                         });
                 });
 

@@ -37,7 +37,9 @@ namespace Ecommerce.DataAccess.Data
                     ListPrice = 19.99,
                     Price = 14.99,
                     Price50 = 13.99,
-                    Price100 = 12.99
+                    Price100 = 12.99,
+                    CategoryId = 5,
+                    imageUrl=""
                 },
                 new Product
                 {
@@ -49,7 +51,9 @@ namespace Ecommerce.DataAccess.Data
                     ListPrice = 14.99,
                     Price = 9.99,
                     Price50 = 8.99,
-                    Price100 = 7.99
+                    Price100 = 7.99,
+                    CategoryId = 5,
+                    imageUrl = ""
                 },
                 new Product
                 {
@@ -61,7 +65,9 @@ namespace Ecommerce.DataAccess.Data
                     ListPrice = 12.99,
                     Price = 7.99,
                     Price50 = 6.99,
-                    Price100 = 5.99
+                    Price100 = 5.99,
+                    CategoryId = 7,
+                    imageUrl = ""
                 },
                   new Product
                   {
@@ -73,7 +79,9 @@ namespace Ecommerce.DataAccess.Data
                       ListPrice = 9.99,
                       Price = 4.99,
                       Price50 = 3.99,
-                      Price100 = 2.99
+                      Price100 = 2.99,
+                      CategoryId = 7,
+                      imageUrl = ""
                   },
                   new Product
                   {
@@ -85,7 +93,9 @@ namespace Ecommerce.DataAccess.Data
                       ListPrice = 7.99,
                       Price = 2.99,
                       Price50 = 1.99,
-                      Price100 = 0.99
+                      Price100 = 0.99,
+                      CategoryId = 8,
+                      imageUrl = ""
                   },
                   new Product
                   {
@@ -97,7 +107,9 @@ namespace Ecommerce.DataAccess.Data
                       ListPrice = 11.99,
                       Price = 6.99,
                       Price50 = 5.99,
-                      Price100 = 4.99
+                      Price100 = 4.99,
+                      CategoryId = 1,
+                      imageUrl = ""
                   },
                   new Product
                   {
@@ -109,7 +121,9 @@ namespace Ecommerce.DataAccess.Data
                       ListPrice = 15.99,
                       Price = 10.99,
                       Price50 = 9.99,
-                      Price100 = 8.99
+                      Price100 = 8.99,
+                      CategoryId = 5,
+                      imageUrl = ""
                   }
                 );
         }

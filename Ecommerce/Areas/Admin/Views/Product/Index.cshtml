@@ -16,9 +16,7 @@
                 <th>Description</th>
                 <th>Author</th>
                 <th>List Price</th>
-                <th>Price for 1-50</th>
-                <th>Price for 50+</th>
-                <th>Price for 100+</th>
+                <th>Category</th>
                 <th></th>
             </tr>
         </thead>
@@ -31,9 +29,7 @@
                     <td>@Product.Description</td>
                     <td>@Product.Author</td>
                     <td>@Product.ListPrice</td>
-                    <td>@Product.Price</td>
-                    <td>@Product.Price50</td>
-                    <td>@Product.Price100</td>
+                    <td>Category</td>
                     <td>
                         <div class="w-75 btn-group" role="group">
                             <a asp-controller="Product" asp-action="Edit" asp-route-id="@Product.Id" class="btn btn-primary btn-sm mx-2"><i class="bi bi-pencil"></i> Edit</a>

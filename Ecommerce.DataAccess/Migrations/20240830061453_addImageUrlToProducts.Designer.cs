@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240829061030_AddProductToDB")]
-    partial class AddProductToDB
+    [Migration("20240830061453_addImageUrlToProducts")]
+    partial class addImageUrlToProducts
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -119,6 +119,9 @@ namespace Ecommerce.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -143,7 +146,13 @@ namespace Ecommerce.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("imageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
 
@@ -152,86 +161,111 @@ namespace Ecommerce.DataAccess.Migrations
                         {
                             Id = 1,
                             Author = "J. R. R. Tolkien",
+                            CategoryId = 5,
                             Description = "The Lord of the Rings is an epic high-fantasy novel written by English author and scholar J. R. R. Tolkien.",
                             ISBN = "978-0-395-19395-7",
                             ListPrice = 19.989999999999998,
                             Price = 14.99,
                             Price100 = 12.99,
                             Price50 = 13.99,
-                            Title = "The Lord of the Rings"
+                            Title = "The Lord of the Rings",
+                            imageUrl = ""
                         },
                         new
                         {
                             Id = 2,
                             Author = "J. K. Rowling",
+                            CategoryId = 5,
                             Description = "Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J. K. Rowling.",
                             ISBN = "978-0-7475-3269-6",
                             ListPrice = 14.99,
                             Price = 9.9900000000000002,
                             Price100 = 7.9900000000000002,
                             Price50 = 8.9900000000000002,
-                            Title = "Harry Potter and the Philosopher's Stone"
+                            Title = "Harry Potter and the Philosopher's Stone",
+                            imageUrl = ""
                         },
                         new
                         {
                             Id = 3,
                             Author = "Dan Brown",
+                            CategoryId = 7,
                             Description = "The Da Vinci Code is a 2003 mystery thriller novel by Dan Brown.",
                             ISBN = "978-0-385-50420-5",
                             ListPrice = 12.99,
                             Price = 7.9900000000000002,
                             Price100 = 5.9900000000000002,
                             Price50 = 6.9900000000000002,
-                            Title = "The Da Vinci Code"
+                            Title = "The Da Vinci Code",
+                            imageUrl = ""
                         },
                         new
                         {
                             Id = 4,
                             Author = "Stephen King",
+                            CategoryId = 7,
                             Description = "The Shining is a horror novel by American author Stephen King.",
                             ISBN = "978-0-385-12167-5",
                             ListPrice = 9.9900000000000002,
                             Price = 4.9900000000000002,
                             Price100 = 2.9900000000000002,
                             Price50 = 3.9900000000000002,
-                            Title = "The Shining"
+                            Title = "The Shining",
+                            imageUrl = ""
                         },
                         new
                         {
                             Id = 5,
                             Author = "Nicholas Sparks",
+                            CategoryId = 8,
                             Description = "The Notebook is a 1996 romantic novel by American novelist Nicholas Sparks.",
                             ISBN = "978-0-446-52080-5",
                             ListPrice = 7.9900000000000002,
                             Price = 2.9900000000000002,
                             Price100 = 0.98999999999999999,
                             Price50 = 1.99,
-                            Title = "The Notebook"
+                            Title = "The Notebook",
+                            imageUrl = ""
                         },
                         new
                         {
                             Id = 6,
                             Author = "Suzanne Collins",
+                            CategoryId = 1,
                             Description = "The Hunger Games is a 2008 dystopian novel by the American writer Suzanne Collins.",
                             ISBN = "978-0-439-02348-1",
                             ListPrice = 11.99,
                             Price = 6.9900000000000002,
                             Price100 = 4.9900000000000002,
                             Price50 = 5.9900000000000002,
-                            Title = "The Hunger Games"
+                            Title = "The Hunger Games",
+                            imageUrl = ""
                         },
                         new
                         {
                             Id = 7,
                             Author = "George R. R. Martin",
+                            CategoryId = 5,
                             Description = "Game of Thrones is the first novel in A Song of Ice and Fire, a series of fantasy novels by the American author George R. R. Martin.",
                             ISBN = "978-0-553-57340-4",
                             ListPrice = 15.99,
                             Price = 10.99,
                             Price100 = 8.9900000000000002,
                             Price50 = 9.9900000000000002,
-                            Title = "Game of Thrones"
+                            Title = "Game of Thrones",
+                            imageUrl = ""
                         });
+                });
+
+            modelBuilder.Entity("Ecommerce.Models.Product", b =>
+                {
+                    b.HasOne("Ecommerce.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

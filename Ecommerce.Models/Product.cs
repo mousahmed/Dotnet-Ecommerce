@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Ecommerce.Models
 {
@@ -36,5 +38,11 @@ namespace Ecommerce.Models
         [DisplayName("price for 100+")]
         [Range(1, 1000)]
         public double Price100 { get; set; }
+        [ValidateNever]
+        public int CategoryId { get; set; }
+        [ForeignKey("CategoryId")]
+        [ValidateNever]
+        public  Category Category { get; set; }
+        public string imageUrl { get; set; }
     }
 }
