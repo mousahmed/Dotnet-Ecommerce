@@ -10,7 +10,8 @@
     <div class="card-body p-4">
         <form method="post" class="row" enctype="multipart/form-data">
             <input asp-for="Product.Id" hidden />
-            <div class="border p-3">
+            <input asp-for="Product.ImageUrl" hidden />
+            <div class="border p-3 col-9">
                 <div asp-validation-summary="ModelOnly"></div>
                 <div class="form-floating py-2 col-12">
                     <input asp-for="Product.Title" class="form-control border-0 shadow">
@@ -60,13 +61,13 @@
                     <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
                 </div>
                 <div class="form-floating py-2 col-12">
-                    <input type="file" class="form-control border-0 shadow">
-                    <label asp-for="Product.imageUrl" for="imageUrl" class="ms-2"></label>
+                    <input type="file" name="file" id="Image" class="form-control border-0 shadow">
+                    <label asp-for="Product.ImageUrl" for="Image" class="ms-2"></label>
                 </div>
 
                 <div class="row py-2">
                     <div class="col-6 col-md-3">
-                        <button type="submit" class="btn btn-primary form-control">@(Model.Product.Id !=0 ? "Update" : "Create")</button>
+                        <button type="submit" class="btn btn-primary form-control">@(Model.Product.Id != 0 ? "Update" : "Create")</button>
                     </div>
                     <div class="col-6 col-md-3">
                         <a asp-controller="Product" asp-action="Index" class="btn btn-outline-secondary form-control">
@@ -74,6 +75,9 @@
                         </a>
                     </div>
                 </div>
+            </div>
+            <div class="col-3">
+                <img src="@Model.Product.ImageUrl" class="img-thumbnail" alt="Product Image" />
             </div>
         </form>
 

@@ -39,7 +39,7 @@ namespace Ecommerce.DataAccess.Data
                     Price50 = 13.99,
                     Price100 = 12.99,
                     CategoryId = 5,
-                    imageUrl=""
+                    ImageUrl=""
                 },
                 new Product
                 {
@@ -53,7 +53,7 @@ namespace Ecommerce.DataAccess.Data
                     Price50 = 8.99,
                     Price100 = 7.99,
                     CategoryId = 5,
-                    imageUrl = ""
+                    ImageUrl = ""
                 },
                 new Product
                 {
@@ -67,7 +67,7 @@ namespace Ecommerce.DataAccess.Data
                     Price50 = 6.99,
                     Price100 = 5.99,
                     CategoryId = 7,
-                    imageUrl = ""
+                    ImageUrl = ""
                 },
                   new Product
                   {
@@ -81,7 +81,7 @@ namespace Ecommerce.DataAccess.Data
                       Price50 = 3.99,
                       Price100 = 2.99,
                       CategoryId = 7,
-                      imageUrl = ""
+                      ImageUrl = ""
                   },
                   new Product
                   {
@@ -95,7 +95,7 @@ namespace Ecommerce.DataAccess.Data
                       Price50 = 1.99,
                       Price100 = 0.99,
                       CategoryId = 8,
-                      imageUrl = ""
+                      ImageUrl = ""
                   },
                   new Product
                   {
@@ -109,7 +109,7 @@ namespace Ecommerce.DataAccess.Data
                       Price50 = 5.99,
                       Price100 = 4.99,
                       CategoryId = 1,
-                      imageUrl = ""
+                      ImageUrl = ""
                   },
                   new Product
                   {
@@ -123,7 +123,7 @@ namespace Ecommerce.DataAccess.Data
                       Price50 = 9.99,
                       Price100 = 8.99,
                       CategoryId = 5,
-                      imageUrl = ""
+                      ImageUrl = ""
                   }
                 );
         }
