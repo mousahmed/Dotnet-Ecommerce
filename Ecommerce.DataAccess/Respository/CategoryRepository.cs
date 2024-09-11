@@ -19,7 +19,7 @@ namespace Ecommerce.DataAccess.Respository
 
         public void Update(Category obj)
         {
-            _db.Update(obj);
+            _db.Categories.Update(obj);
         }
 
 

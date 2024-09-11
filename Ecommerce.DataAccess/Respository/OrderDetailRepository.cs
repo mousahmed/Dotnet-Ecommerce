@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.DataAccess.Respository
 {
-    public class ShoppingCartRepository : Repository<ShoppingCart>, IShoppingCartRepository
+    public class OrderDetailRepository : Repository<OrderDetail>, IOrderDetailRepository
     {
         private readonly ApplicationDbContext _db;
-        public ShoppingCartRepository(ApplicationDbContext db) : base(db)
+        public OrderDetailRepository(ApplicationDbContext db) : base(db)
         {
             _db = db;
         }
 
-        public void Update(ShoppingCart obj)
+        public void Update(OrderDetail obj)
         {
-            _db.ShoppingCarts.Update(obj);
+            _db.OrderDetails.Update(obj);
         }
 
 
